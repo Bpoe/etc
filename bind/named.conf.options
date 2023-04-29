@@ -1,0 +1,11 @@
+options {
+	directory "c:\bin\bind\zones";  			# Sets the location of the root hints file
+	recursion yes;              				# Allows recursive queries (looking-up unknown hosts)
+	allow-recursion { any; };       			# Allows any DNS client to make recursive queries
+	listen-on { any; };             			# Listen on all IPv4 addresses (but not IPv6)
+	version none;	                			# Prevents attackers getting the BIND version
+	prefetch 10 60;								# Prefetches any cached record with a TTL > 60 seconds when it gets to within 10 seconds of expiry)
+	rate-limit { responses-per-second 10; };	# Tries to limit DNS DDoS attacks
+	querylog yes;	       	 					# Ensure query logging is enabled
+	dnssec-validation auto;     				# sets the DNS root zone as the trust anchor for DNSSEC
+};

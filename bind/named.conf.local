@@ -1,0 +1,9 @@
+zone "." {
+	type mirror;
+};
+
+zone "lan.local." in{
+	type master;
+	file "lan.local.zone";
+	allow-update { none; };
+};
