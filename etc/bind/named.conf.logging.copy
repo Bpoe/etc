@@ -1,65 +1,64 @@
 # Adapted from: https://kb.isc.org/docs/aa-01526
-# RTAN 16/12/2020
 
 logging {
      channel default_log {
-          file "c:\bin\bind\logs\default.log";
+          file "/var/named/log/default";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel auth_servers_log {
-          file "c:\bin\bind\logs\auth_servers.log";
+          file "/var/named/log/auth_servers";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel dnssec_log {
-          file "c:\bin\bind\logs\dnssec.log";
+          file "/var/named/log/dnssec";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel zone_transfers_log {
-          file "c:\bin\bind\logs\zone_transfers.log";
+          file "/var/named/log/zone_transfers";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel ddns_log {
-          file "c:\bin\bind\logs\ddns.log";
+          file "/var/named/log/ddns";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel client_security_log {
-          file "c:\bin\bind\logs\client_security.log";
+          file "/var/named/log/client_security";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel rate_limiting_log {
-          file "c:\bin\bind\logs\rate_limiting.log";
+          file "/var/named/log/rate_limiting";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel rpz_log {
-          file "c:\bin\bind\logs\rpz.log";
+          file "/var/named/log/rpz";
           print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
      };
      channel dnstap_log {
-          file "c:\bin\bind\logs\dnstap.log";
+          file "/var/named/log/dnstap";
           print-time yes;
           print-category yes;
           print-severity yes;
@@ -71,8 +70,8 @@ logging {
 // query logging on (and off again) using command ‘rndc querylog’
 //
      channel queries_log {
-          file "c:\bin\bind\logs\queries.log";
-		  print-time yes;
+          file "/var/named/log/queries";
+          print-time yes;
           print-category yes;
           print-severity yes;
           severity info;
@@ -85,7 +84,7 @@ logging {
 // affecting the regular logging.
 //
      channel query-errors_log {
-          file "c:\bin\bind\logs\query-errors.log";
+          file "/var/named/log/query-errors";
           print-time yes;
           print-category yes;
           print-severity yes;
@@ -112,7 +111,6 @@ logging {
 // channel that only produces output if the debug level is non-zero.
 //
      channel default_debug {
-          file "c:\bin\bind\logs\named.log";
           print-time yes;
           print-category yes;
           print-severity yes;

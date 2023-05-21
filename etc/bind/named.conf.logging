@@ -1,0 +1,30 @@
+// Adapted from: https://kb.isc.org/docs/aa-01526
+
+logging {
+//
+// This is the default syslog channel, defined here for clarity.  You don’t
+// have to use it if you prefer to log to your own channels.
+// It sends to syslog’s daemon facility, and sends only logged messages
+// of priority info and higher.
+// (The options to print time, category and severity are non-default.)
+//
+     channel default_syslog {
+          print-time yes;
+          print-category yes;
+          print-severity yes;
+          syslog daemon;
+          severity info;
+     };
+//
+// This is the default debug output channel, defined here for clarity.  You
+// might want to redefine the output destination if it doesn’t fit with your
+// local system administration plans for logging.  It is also a special
+// channel that only produces output if the debug level is non-zero.
+//
+     channel default_debug {
+          print-time yes;
+          print-category yes;
+          print-severity yes;
+          severity dynamic;
+     };
+};
